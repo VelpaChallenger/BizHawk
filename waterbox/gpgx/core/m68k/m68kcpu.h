@@ -878,11 +878,11 @@ INLINE uint m68ki_read_8_fc(uint address, uint fc)
 
   uint value;	  
   if (temp->read8)
-     value = (*temp->read8)(ADDRESS_68K(address));
+    value = (*temp->read8)(ADDRESS_68K(address));
   else
-     value = READ_BYTE(temp->base, (address) & 0xffff);  
+    value = READ_BYTE(temp->base, (address) & 0xffff);  
   if (biz_readcb)
-     biz_readcb(address, value);
+    biz_readcb(address, value);
   return value;
 }
 
